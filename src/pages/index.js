@@ -2,11 +2,17 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 
 import { PageLayout } from "../components/PageLayout"
+import { Header } from "../components/Header"
 
 const IndexPage = ({ data }) => {
   return (
     <PageLayout>
+      <Header
+        title="Finally I've got my blog"
+        subtitle="I bet you can get familiar with me."
+      />
       <div>This is empty page.</div>
+      <Link to="/post">Go to post</Link>
     </PageLayout>
   )
 }

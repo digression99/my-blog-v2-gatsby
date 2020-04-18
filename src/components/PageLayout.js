@@ -1,17 +1,10 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from 'styled-components';
 
 import { GlobalStyle } from "../styles/global"
-import { Header } from './Header'
 import "normalize.css"
+import { Footer } from "./Footer"
 
 const Wrapper = styled.div`
   width : 100%;
@@ -19,6 +12,7 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  min-height: 100vh;
 `
 
 const Container = styled.main`
@@ -30,10 +24,10 @@ export const PageLayout = ({ children }) => {
     <>
       <Wrapper>
         <Container>
-          <Header />
           {children}
         </Container>
       </Wrapper>
+      <Footer />
       <GlobalStyle />
     </>
   )
