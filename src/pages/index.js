@@ -41,18 +41,18 @@ const IndexPage = ({ data }) => {
 // }
 //
 
-export const query = graphql`
-  query {
-    allStrapiThinkSnippet {
-      edges {
-        node {
-          content
-          id
-        }
-      }
-    }
-  }
-  
-`
-
+// export const query = graphql`
+//   query {
+//     allStrapiThinkSnippet {
+//       edges {
+//         node {
+//           content
+//           id
+//         }
+//       }
+//     }
+//   }
+//
+// `
+//
 export default IndexPage
