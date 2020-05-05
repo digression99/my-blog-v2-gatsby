@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import ReactMarkdown from "react-markdown";
 import { PageLayout } from "../components/PageLayout"
+import { Header } from "../components/Header"
 
 export const query = graphql`
   query PostQuery($id: String!) {
@@ -9,18 +10,21 @@ export const query = graphql`
       id
       title
       content
-      created_at
-      updated_at
+      createdAt: created_at
+      updatedAt: updated_at
     }
   }
 `
 
 export const Post = ({ data }) => {
-  const { id, title, content, created_at, updated_at } = data.strapiPost;
+  const { title, content, createdAt, updatedAt } = data.strapiPost;
+
   return (
     <PageLayout>
+      <Header title="My think snippets." headerTo="/post" />
       <h1>{title}</h1>
-      <div>{created_at}</div>
+      <div>{createdAt}</div>
+      <div>Last modified - {updatedAt}</div>
       <ReactMarkdown
         source={content}
         transformImageUri={uri => uri.startsWith('http') ? uri : `http://localhost:1337${uri}`}
