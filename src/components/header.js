@@ -9,6 +9,16 @@ const Wrapper = styled.header`
 const Title = styled.h1`
   font-size: 3.4rem;
   font-weight: 800;
+  
+  a {
+    text-decoration: none;
+    color: black;
+    
+    :hover {
+      color : #ffe3e3;
+    }
+  }
+  
 `
 
 const Subtitle = styled.h2`
@@ -16,10 +26,13 @@ const Subtitle = styled.h2`
   font-weight: 500;
 `
 
-export const Header = ({ title, subtitle }) => {
+export const Header = ({ title, subtitle, headerTo }) => {
+
+  const to = headerTo ? headerTo : '/';
+
   return (
     <Wrapper>
-      <Title>{title}</Title>
+      <Title><Link to={to}>{title}</Link></Title>
       <Subtitle>{subtitle}</Subtitle>
     </Wrapper>
   )
